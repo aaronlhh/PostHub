@@ -13,8 +13,8 @@ const HomePage = () => {
                         id="newest"
                         name='order'
                         value={1}
+                        className="listOrder-button"
                         onChange={(e) => {
-                            console.log(e.target.value)
                             setListOrder(e.target.value)
                         }}
                         checked={listOrder == 1}
@@ -31,8 +31,8 @@ const HomePage = () => {
                         id="popular"
                         name='order'
                         value={2}
+                        className="listOrder-button"
                         onChange={(e) => {
-                            console.log(e.target.value)
                             setListOrder(e.target.value)
                         }}
                         checked={listOrder == 2}
