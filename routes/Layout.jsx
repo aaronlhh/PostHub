@@ -9,7 +9,7 @@ const Layout = () => {
                     <Link 
                         to='/' 
                         className="web-title" >
-                            HistoryHub
+                            HobbyHub
                     </Link>
                 </span>
                 <input 
