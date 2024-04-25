@@ -66,3 +66,69 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+
+/* navbar styles */
+.whole-page {
+    display: flex;
+    flex-direction: column;
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgb(2, 178, 120);
+    display: flex;
+    justify-content: space-evenly;
+    padding-top: 3vh;
+    padding-bottom: 3vh;
+    align-items: center;
+}
+
+.navbar a {
+    color: white;
+}
+
+.web-title {
+    font-size: Larger;
+    font-weight: 900;
+}
+
+.nav-link {
+    display: flex;
+    .gap {
+        margin-left: 2vw;
+    }
+    a {
+        font-weight: 200;
+    }
+}
+
+.search-query {
+    border-radius: 10px;
+    width: 20vw;
+    height: 4vh;
+    text-indent: 2%;
+}
+
+
+/* Homepage */
+.list-order {
+    display: flex;
+    align-items: center;
+}
+
+.list-order label {
+    margin-left: 0.5rem;
+    padding: 0.25rem 0.5rem;
+    background-color: rgb(2, 178, 120);
+    color: white;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+.list-order input{
+    display: none;
+}
