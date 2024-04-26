@@ -9,7 +9,7 @@ const PostForm = ({ data, handleChange }) => {
                 placeholder="Title"
                 className="title-input"
                 name="title"
-                value={data.title}
+                value={data.title? data.title: ''}
                 onChange={handleChange}
                 required
             />
@@ -18,7 +18,7 @@ const PostForm = ({ data, handleChange }) => {
                 name="content"  
                 placeholder="Content (Optional)"
                 className="content-input"
-                value={data.content}
+                value={data.content? data.content: ''}
                 onChange={handleChange}
                 rows="11">
             </textarea>
@@ -28,7 +28,7 @@ const PostForm = ({ data, handleChange }) => {
                 placeholder="Image URL (Optional)"
                 name="image"
                 className="image-input"
-                value={data.image}
+                value={data.image? data.image : ''}
                 onChange={handleChange}
             />
         </form>
