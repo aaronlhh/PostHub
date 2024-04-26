@@ -84,7 +84,7 @@ button:focus-visible {
     height: 10vh;
     background-color: rgb(2, 178, 120);
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
     align-items: center;
 }
 
@@ -107,12 +107,6 @@ button:focus-visible {
     }
 }
 
-.search-query {
-    border-radius: 10px;
-    width: 20vw;
-    height: 4vh;
-    text-indent: 2%;
-}
 
 
 /* Homepage */
@@ -121,10 +115,16 @@ button:focus-visible {
     flex-direction: column;
 }
 
+.filter-list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 3vh;
+}
+
 .filters {
     display: flex;
     align-items: center;
-    margin-bottom: 3vh;
 }
 
 .filters label {
@@ -136,12 +136,19 @@ button:focus-visible {
     border-radius: 8px;
 }
 
-.filters input{
+.filters .listOrder-button{
     display: none;
 }
 
 .filters .listOrder-button:checked ~ label {
     background-color: rgb(2, 122, 82);
+}
+
+.search-query {
+    border-radius: 10px;
+    width: 20vw;
+    height: 4vh;
+    text-indent: 2%;
 }
 
 .post-card {

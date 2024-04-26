@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Outlet, Link } from 'react-router-dom'
 
 const Layout = () => {
@@ -12,11 +12,7 @@ const Layout = () => {
                             HobbyHub
                     </Link>
                 </span>
-                <input 
-                    type="text" 
-                    className="search-query"
-                    placeholder="Search"    
-                />
+                
                 <div className="nav-link">
                     <Link to='/' >
                         Home
