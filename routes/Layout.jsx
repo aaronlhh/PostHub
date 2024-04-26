@@ -22,7 +22,7 @@ const Layout = () => {
                         Home
                     </Link>
                     <div className="gap"></div>
-                    <Link to='/' >
+                    <Link to='/create' >
                         Create New Post
                     </Link>
                 </div>

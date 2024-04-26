@@ -120,13 +120,13 @@ button:focus-visible {
     flex-direction: column;
 }
 
-.list-order {
+.filters {
     display: flex;
     align-items: center;
     margin-bottom: 3vh;
 }
 
-.list-order label {
+.filters label {
     margin-left: 0.5rem;
     padding: 0.25rem 0.5rem;
     background-color: rgb(2, 178, 120);
@@ -135,11 +135,59 @@ button:focus-visible {
     border-radius: 8px;
 }
 
-.list-order input{
+.filters input{
     display: none;
 }
 
-.list-order .listOrder-button:checked ~ label {
+.filters .listOrder-button:checked ~ label {
     background-color: rgb(2, 122, 82);
 }
 
+.post-card {
+    padding: 1rem;
+    background-color: white;
+    border-radius: 8px;
+    margin-bottom: 2vh;
+
+    .title-name {
+        font-size: large;
+        font-weight: 800;
+        color: black;
+    }
+    .gap {
+        margin-top: 1vh;
+    }
+}
+
+
+/* create post form */
+.create-form {
+    height: 40vh;
+    width: 30vw;
+    margin: 0 auto;
+    padding: 2rem;
+    padding-top: 3rem;
+    background-color: white;
+    text-align: center;
+}
+
+.form-inputs {
+    display: flex;
+    flex-direction: column;
+
+    input {
+        margin-bottom: 1rem;
+    }
+
+    .title-input {
+        height: 1.2rem;
+    }   
+
+    .content-input {
+        height: 8rem;
+    }
+
+    .image-input {
+        height: 1.2rem;
+    }
+}
