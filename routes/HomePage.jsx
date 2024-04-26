@@ -5,6 +5,8 @@ import { supabase } from "../src/client";
 const HomePage = () => {
     const [listOrder, setListOrder] = useState(0);
     const [postList, setPostList] = useState(null);
+    const [search, setSearch] = useState('');
+    const [filteredPostList, setFilterPostList] = useState(null);
 
     useEffect(() => {
         const fetchData = async () => {
@@ -19,10 +21,23 @@ const HomePage = () => {
                 .order('upvote', {ascending: false});
             // console.log(dataByUpvote);
             setPostList([dataByTime.data, dataByUpvote.data]);
+            setFilterPostList([dataByTime.data, dataByUpvote.data]);
             // console.log(new Date(data['0'].created_at))
         };
         fetchData().catch(console.error);
     }, [])
+
+    const handleSearchChange = (e) => {
+        setSearch(e.target.value);
+        let newTimeData = Object.values(postList[0]).filter((value) => (
+            value.title.toLowerCase().includes(e.target.value)
+        ))
+        let newTimeUpvote = Object.values(postList[1]).filter((value) => (
+            value.title.toLowerCase().includes(e.target.value)
+        ))
+        setFilterPostList([newTimeData, newTimeUpvote]);
+        console.log(filteredPostList);
+    }
 
     return (
         <div className="homepage">
@@ -68,13 +83,15 @@ const HomePage = () => {
                 <input 
                     type="text" 
                     className="search-query"
-                    placeholder="Search"    
+                    placeholder="Search"
+                    value={search}
+                    onChange={handleSearchChange}
                 />
             </div>
             <div className="feeds">
                 {
-                    postList && 
-                    Object.values(postList[listOrder]).map((value, index) => (
+                    filteredPostList && 
+                    Object.values(filteredPostList[listOrder]).map((value, index) => (
                         <PostCard  
                             postData = {value}
                             key = {index}
