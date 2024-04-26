@@ -1,20 +1,20 @@
 import React, { useState } from "react";
 import PostForm from "../components/PostForm";
 
-const CreatePage = () => {
+const UpdatePage = () => { 
     const [postData, setPostData] = useState({
         title: '',
         content: '',
         image: ''
     });
 
-    const handleCreate = () => {
+    const handleUpdate = () => {
         // create the form 
-
+        
     }
 
     return (
-        <div className="create-form">
+        <div className="update-form">
             <PostForm 
                 data = {postData}
                 handleChange = {(e) => {
@@ -24,10 +24,10 @@ const CreatePage = () => {
                     }))
                 }}
             />
-            <button onClick={handleCreate}>Create Post</button>
+            <button onClick={handleUpdate}>Update Post</button>
         </div>
     )
 }
 
 
-export default CreatePage;
+export default UpdatePage;

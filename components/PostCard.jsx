@@ -10,7 +10,7 @@ const PostCard = ({  }) => {
             </div>
             <div className="gap"></div>
             <Link 
-                to='/'
+                to='/update/1'
                 className="title-name" 
             >
                 title

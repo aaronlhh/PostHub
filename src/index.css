@@ -162,32 +162,56 @@ button:focus-visible {
 
 /* create post form */
 .create-form {
-    height: 40vh;
-    width: 30vw;
     margin: 0 auto;
     padding: 2rem;
     padding-top: 3rem;
     background-color: white;
     text-align: center;
+
+    button {
+        color: white;
+        background-color: rgb(2, 178, 120);
+    }
 }
 
 .form-inputs {
     display: flex;
     flex-direction: column;
 
-    input {
-        margin-bottom: 1rem;
-    }
-
     .title-input {
-        height: 1.2rem;
+        height: 1.3rem;
+        margin-bottom: 1rem;
+        width: 30vw;
     }   
 
     .content-input {
-        height: 8rem;
+        margin-bottom: 1rem;
+        width: 30vw;
     }
 
     .image-input {
-        height: 1.2rem;
+        height: 1.3rem;
+        margin-bottom: 1rem;
+        width: 30vw;
     }
 }
+
+
+
+/* update post form */
+.update-form {
+    margin: 0 auto;
+    padding: 2rem;
+    padding-top: 3rem;
+    background-color: white;
+    text-align: center;
+
+    button {
+        color: white;
+        background-color: rgb(2, 178, 120);
+    }
+}
+
+
+
+

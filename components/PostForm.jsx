@@ -14,14 +14,14 @@ const PostForm = ({ data, handleChange }) => {
                 required
             />
 
-            <input 
-                type="text"
+            <textarea 
+                name="content"  
                 placeholder="Content (Optional)"
-                name="content"
                 className="content-input"
                 value={data.content}
                 onChange={handleChange}
-            />
+                rows="11">
+            </textarea>
 
             <input 
                 type="text"
