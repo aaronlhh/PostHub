@@ -5,12 +5,13 @@
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  --background-color: rgb(243, 239, 239);
 }
 
 a {
@@ -25,7 +26,7 @@ a:hover {
 body {
   min-width: 320px;
   min-height: 100vh;
-  background-color: rgb(243, 239, 239);
+  background-color: var(--background-color, white);
   margin: 0;
 }
 
@@ -214,4 +215,77 @@ button:focus-visible {
 
 
 
+/* post detail page */
+.post-detail {
+    padding: 2rem 1rem 1rem 1rem;
+    background-color: white;
+    border-radius: 8px;
+
+    .post-title {
+        font-size: large;
+        font-weight: 800;
+        color: black;
+    }
+    .gap {
+        margin-top: 1vh;
+    }
+}
+
+.edit-list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 1rem 0;
+}
+
+.change-post {
+    display: flex;
+
+    .gap {
+        margin-right: 2vw;
+    }
+
+    a {
+        color: black;
+    }
+
+    .delete {
+        cursor: pointer;
+        user-select: none;
+    }
+}
+
+.upvote {
+    .symbol {
+        cursor: pointer;
+        user-select: none;
+    }
+}
+
+.comment-box { 
+    background-color: var(--background-color, white);;
+    padding: 1rem;
+}
+
+.history {
+    margin-bottom: 1.5rem;
+}
+
+.comment {
+    display: flex;
+    justify-content: space-between;
+
+    input {
+        width: 82%;
+        text-indent: 1%;
+        border-radius: 5px;
+    }
+
+    button {
+        background-color: rgb(2, 178, 120);
+        color: white;
+        padding: 0.6em 0.8em;
+        font-size:small;
+    }
+}
 
