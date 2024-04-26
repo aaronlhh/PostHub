@@ -109,6 +109,20 @@ const PostDetail = ({  }) => {
                         </div>
                         <div className="gap"></div>
                         <span className="post-title">{postData.title}</span>
+                        <div className="gap"></div>
+                        {
+                            postData.image == '' ? (
+                                <></>
+                            ) : (
+                                <div className="post-img">
+                                    <img 
+                                        src={postData.image} 
+                                        alt="Image posted by user"
+                                    />
+                                </div> 
+                            )
+
+                        }
                     </div>
                     <div className="edit-list">
                         <div className="upvote">

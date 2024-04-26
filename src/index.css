@@ -229,6 +229,12 @@ button:focus-visible {
     .gap {
         margin-top: 1vh;
     }
+
+    .post-img img {
+        max-width: 300px;
+        max-height: 200px;
+    }
+
 }
 
 .edit-list {
