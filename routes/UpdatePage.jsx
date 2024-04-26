@@ -1,16 +1,37 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import PostForm from "../components/PostForm";
+import { useParams } from "react-router-dom";
+import { supabase } from "../src/client";
 
 const UpdatePage = () => { 
+    const params = useParams();
     const [postData, setPostData] = useState({
         title: '',
         content: '',
         image: ''
     });
 
-    const handleUpdate = () => {
+    useEffect(() => {
+        const fetchData = async () => {
+            const postDataList = await supabase
+                .from('HobbyPost')
+                .select()
+                .eq('id', params.post_id)
+
+            setPostData(postDataList.data[0])
+            console.log(postDataList.data[0]);
+        }
+        fetchData().catch(console.err);
+    }, []);
+
+    const handleUpdate = async () => {
         // create the form 
+        await supabase  
+            .from('HobbyPost')
+            .update(postData)
+            .eq('id', params.post_id)
         
+        alert('update successfully');
     }
 
     return (
