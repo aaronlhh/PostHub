@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import PostForm from "../components/PostForm";
+import { supabase } from "../src/client";
 
 const CreatePage = () => {
     const [postData, setPostData] = useState({
@@ -8,9 +9,18 @@ const CreatePage = () => {
         image: ''
     });
 
-    const handleCreate = () => {
+    const handleCreate = async () => {
         // create the form 
-
+        await supabase
+            .from('HobbyPost')
+            .insert(postData)
+        
+        alert("Inserting data successfully");
+        setPostData({
+            title: '',
+            content: '',
+            image: ''
+        });
     }
 
     return (
