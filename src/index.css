@@ -149,6 +149,7 @@ button:focus-visible {
     width: 20vw;
     height: 4vh;
     text-indent: 2%;
+    user-select: none;
 }
 
 .post-card {
