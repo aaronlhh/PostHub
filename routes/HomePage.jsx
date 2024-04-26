@@ -1,11 +1,12 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import PostCard from "../components/PostCard";
 
 const HomePage = () => {
     const [listOrder, setListOrder] = useState(1);
 
     return (
         <div className="homepage">
-            <div className="list-order">
+            <div className="filters">
                 <span>Order by: </span>
                 <div>
                     <input 
@@ -43,7 +44,13 @@ const HomePage = () => {
                 </div>
             </div>
             <div className="feeds">
-                The list order is {listOrder}
+                <PostCard  />
+                <PostCard  />
+                <PostCard  />
+                <PostCard  />
+                <PostCard  />
+                <PostCard  />
+                <PostCard  />
             </div>
         </div>
     )
