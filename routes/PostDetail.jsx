@@ -109,6 +109,18 @@ const PostDetail = ({  }) => {
                         </div>
                         <div className="gap"></div>
                         <span className="post-title">{postData.title}</span>
+                        {
+                            postData.content == '' ? (
+                                <></>
+                            ) : (
+                                <>
+                                    <div className="gap"></div>
+                                    <div className="content">
+                                        {postData.content}
+                                    </div>
+                                </>                                
+                            )
+                        }
                         <div className="gap"></div>
                         {
                             postData.image == '' ? (
@@ -121,7 +133,6 @@ const PostDetail = ({  }) => {
                                     />
                                 </div> 
                             )
-
                         }
                     </div>
                     <div className="edit-list">
