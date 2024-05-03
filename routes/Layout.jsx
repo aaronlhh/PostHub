@@ -17,7 +17,7 @@ const Layout = () => {
                     <Link 
                         to='/' 
                         className="web-title" >
-                            HobbyHub
+                            PostHub
                     </Link>
                 </span>
                 <div className="search_input">
