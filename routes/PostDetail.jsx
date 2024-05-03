@@ -23,7 +23,7 @@ const PostDetail = ({  }) => {
                 .eq('post_id', params.post_id)
                 .order('created_at', {ascending: true})
 
-            console.log([postDataList.data[0], commentDataList.data])
+            // console.log([postDataList.data[0], commentDataList.data])
             setPostData(postDataList.data[0]);
             setCommentData(commentDataList.data)
             setCommentHistory(
