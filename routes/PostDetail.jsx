@@ -64,7 +64,9 @@ const PostDetail = ({  }) => {
             .eq('id', postData.id)
     }
 
-    const handleMakeComment = async () => {
+    const handleMakeComment = async (e) => {
+        e.preventDefault();
+
         const newInput = {
             content: comment,
             post_id: params.post_id
@@ -160,7 +162,9 @@ const PostDetail = ({  }) => {
                                 ))
                             }
                         </div>
-                        <div className="comment">
+                        <form className="comment" 
+                            autocomplete="off"
+                            onSubmit={handleMakeComment}>
                             <input 
                                 type="text"
                                 className="comment-input"
@@ -168,9 +172,10 @@ const PostDetail = ({  }) => {
                                 name="comment"
                                 value={comment}
                                 onChange={(e) => setComment(e.target.value)}
+                                required
                             />
-                            <button onClick={handleMakeComment}>Make Comment</button>
-                        </div>
+                            <button type="submit">Make Comment</button>
+                        </form>
                     </div>
                 </div>) :
                 <div className="post-detail"></div> 
