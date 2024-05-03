@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from "react";
 import PostCard from "../components/PostCard";
 import { supabase } from "../src/client";
+import { useLocation } from "react-router-dom";
 
 const HomePage = () => {
     const [listOrder, setListOrder] = useState(0);
-    const [postList, setPostList] = useState(null);
-    const [search, setSearch] = useState('');
     const [filteredPostList, setFilterPostList] = useState(null);
+    const location = useLocation();
+    const search = location.state? location.state.search:"";
 
     useEffect(() => {
         const fetchData = async () => {
@@ -20,24 +21,19 @@ const HomePage = () => {
                 .select()
                 .order('upvote', {ascending: false});
             // console.log(dataByUpvote);
-            setPostList([dataByTime.data, dataByUpvote.data]);
-            setFilterPostList([dataByTime.data, dataByUpvote.data]);
+            let newTimeData = Object.values(dataByTime.data).filter((value) => (
+                value.title.toLowerCase().includes(search)
+            ))
+            let newTimeUpvote = Object.values(dataByUpvote.data).filter((value) => (
+                value.title.toLowerCase().includes(search)
+            ))
+            setFilterPostList([newTimeData, newTimeUpvote]);
             // console.log(new Date(data['0'].created_at))
+            // console.log(search);
         };
         fetchData().catch(console.error);
-    }, [])
+    }, [location.key])
 
-    const handleSearchChange = (e) => {
-        setSearch(e.target.value);
-        let newTimeData = Object.values(postList[0]).filter((value) => (
-            value.title.toLowerCase().includes(e.target.value)
-        ))
-        let newTimeUpvote = Object.values(postList[1]).filter((value) => (
-            value.title.toLowerCase().includes(e.target.value)
-        ))
-        setFilterPostList([newTimeData, newTimeUpvote]);
-        console.log(filteredPostList);
-    }
 
     return (
         <div className="homepage">
@@ -79,14 +75,6 @@ const HomePage = () => {
                     </div>
                 </div>
 
-
-                <input 
-                    type="text" 
-                    className="search-query"
-                    placeholder="Search"
-                    value={search}
-                    onChange={handleSearchChange}
-                />
             </div>
             <div className="feeds">
                 {

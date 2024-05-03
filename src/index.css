@@ -107,6 +107,26 @@ button:focus-visible {
     }
 }
 
+.search_input {
+    display: flex;
+    align-items: center;
+    
+    .search-img {
+        margin-left: 1rem;
+        transform: scale(-1, 1);
+        user-select: none;
+        cursor: pointer;
+    }
+}
+
+.search-query {
+    border-radius: 10px;
+    width: 20vw;
+    height: 4vh;
+    text-indent: 2%;
+    user-select: none;
+}
+
 
 
 /* Homepage */
@@ -142,14 +162,6 @@ button:focus-visible {
 
 .filters .listOrder-button:checked ~ label {
     background-color: rgb(2, 122, 82);
-}
-
-.search-query {
-    border-radius: 10px;
-    width: 20vw;
-    height: 4vh;
-    text-indent: 2%;
-    user-select: none;
 }
 
 .post-card {
