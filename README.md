@@ -1,8 +1,8 @@
-# Web Development Final Project - *Hobby Hub*
+# Web Development Final Project - *Post Hub*
 
 Submitted by: **Honghao Lin**
 
-This web app: **Hobby Hub that allows people to make posts and communicate**
+This web app: **PostHub that allows people to make posts and communicate**
 
 Time spent: **10** hours spent in total
 
